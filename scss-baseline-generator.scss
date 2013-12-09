@@ -7,19 +7,19 @@ $line-height: 24 !default;
 
 $unit: em;
 $type-scale: 3, 2.25, 1.5, 1.3125, 1.125, 1;
-$font-size: ($base-font-size / 16);
+$font-size-ratio: ($base-font-size / 16);
 $line-height-ratio: ($line-height / $base-font-size);
 
 // Functions
 
 @function calc-font-size($scale) {
 
-	@return ($font-size * $scale)#{$unit};
+	@return ($font-size-ratio * $scale)#{$unit};
 }
 
 @function calc-line-height($scale) {
 
-	$line-height-value: ($line-height-ratio / ($scale * $font-size));
+	$line-height-value: ($line-height-ratio / ($scale * $font-size-ratio));
 
 	@if ($line-height-value < 1) {
 
@@ -31,7 +31,7 @@ $line-height-ratio: ($line-height / $base-font-size);
 
 @function calc-margin($scale) {
 
-	@return ($line-height-ratio / ($scale * $font-size))#{$unit};
+	@return ($line-height-ratio / ($scale * $font-size-ratio))#{$unit};
 }
 
 // Mixins
