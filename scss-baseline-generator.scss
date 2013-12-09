@@ -1,0 +1,84 @@
+// Change this
+
+$base-font-size: 16 !default;
+$line-height: 24 !default;
+
+// Variables
+
+$unit: em;
+$type-scale: 3, 2.25, 1.5, 1.3125, 1.125, 1;
+$font-size: ($base-font-size / 16);
+$line-height-ratio: ($line-height / $base-font-size);
+
+// Functions
+
+@function calc-font-size($scale) {
+
+	@return ($font-size * $scale)#{$unit};
+}
+
+@function calc-line-height($scale) {
+
+	$line-height-value: ($line-height-ratio / ($scale * $font-size));
+
+	@if ($line-height-value < 1) {
+
+		$line-height-value: ($line-height-value * 2);
+	}
+
+	@return $line-height-value;
+}
+
+@function calc-margin($scale) {
+
+	@return ($line-height-ratio / ($scale * $font-size))#{$unit};
+}
+
+// Mixins
+
+@mixin hyphens($value: auto) {
+	-webkit-hyphens: $value;
+	   -moz-hyphens: $value;
+	    -ms-hyphens: $value;
+	        hyphens: $value;
+}
+
+// Styles
+
+html {
+    font-size: 100%;
+}
+%hN {
+	font-weight: bold;
+	margin: 0;
+}
+@for $i from 1 through 6 {
+
+	h#{$i}, .h#{$i} {
+		@extend %hN;
+		$scale: nth($type-scale, $i);
+		font-size: calc-font-size($scale);
+		line-height: calc-line-height($scale);
+		margin-bottom: calc-margin($scale);
+	}
+}
+p,
+blockquote {
+	font-size: calc-font-size(nth($type-scale, 6));
+	line-height: calc-line-height(nth($type-scale, 6));
+	margin: 0 0 calc-margin(nth($type-scale, 6));
+	@include hyphens;
+}
+dl,
+ol,
+ul {
+	font-size: calc-font-size(nth($type-scale, 6));
+	margin: 0 0 calc-margin(nth($type-scale, 6));
+	padding: 0;
+}
+dd,
+dt,
+li {
+	line-height: calc-line-height(nth($type-scale, 6));
+	margin: 0;
+}
