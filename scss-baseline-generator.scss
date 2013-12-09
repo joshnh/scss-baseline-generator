@@ -82,3 +82,77 @@ li {
 	line-height: calc-line-height(nth($type-scale, 6));
 	margin: 0;
 }
+
+/* Using the default values returns the following:
+
+html {
+  font-size: 100%;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: bold;
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+
+h2, .h2 {
+  font-size: 2.25em;
+  line-height: 1.33333;
+  margin-bottom: 0.66667em;
+}
+
+h3, .h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+h4, .h4 {
+  font-size: 1.3125em;
+  line-height: 1.14286;
+  margin-bottom: 1.14286em;
+}
+
+h5, .h5 {
+  font-size: 1.125em;
+  line-height: 1.33333;
+  margin-bottom: 1.33333em;
+}
+
+h6, .h6 {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+}
+
+p,
+blockquote {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0 0 1.5em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+dl,
+ol,
+ul {
+  font-size: 1em;
+  margin: 0 0 1.5em;
+  padding: 0;
+}
+
+dd,
+dt,
+li {
+  line-height: 1.5;
+  margin: 0;
+}
+*/
