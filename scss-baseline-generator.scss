@@ -5,10 +5,10 @@ $line-height: 24 !default;
 
 // Variables
 
-$unit: em;
-$type-scale: 3, 2.25, 1.5, 1.3125, 1.125, 1;
 $font-size-ratio: ($base-font-size / 16);
 $line-height-ratio: ($line-height / $base-font-size);
+$type-scale: 3, 2.25, 1.5, 1.3125, 1.125, 1;
+$unit: em;
 
 // Functions
 
